@@ -3,7 +3,7 @@
 ### Local development machine
 
 1. Install Docker and docker-compose if you don't already have it https://store.docker.com/search?type=edition&offering=community
-(hint you should it is awesome!)
+(hint: you should - it is awesome!)
 
 The Mac version has both Docker and docker-compose but I can't speak for the other platforms.
 
@@ -15,7 +15,9 @@ The Mac version has both Docker and docker-compose but I can't speak for the oth
 $ docker-compose -up -d
 ```
 
-That should be it! We build a couple of servers and install a mysql database with the correct tables and load data into it. 
+That should be it! Yes thats right, you are ready to go !
+
+We build a couple of servers, one for the form and one for the backend. We also install a mysql database with the correct tables and load data into it. 
 
 Access the front end here 
 
@@ -31,7 +33,7 @@ http://localhost:8081/payday/1/2018
 
 ### To run unit tests
 
-You need to enter the docker container and run it from in there, so that it has all the right environment variables to work just do this
+You need to enter the docker container and run it from in there. This is neccessary so that it can run in the right context. Think of it as a seperate server somewhere.
 
 ```bash
 $ docker-compose exec php bash 
@@ -66,7 +68,7 @@ backend_frontend_1   docker-php-entrypoint apac ...   Up      0.0.0.0:8080->80/t
 backend_server_1     docker-php-entrypoint apac ...   Up      0.0.0.0:8081->80/tcp, 8081/tcp
 ```
 
-If anything is not running you can try this again 
+If anything is not running (state: Up) you can try this again.
 
 ```bash
 $ docker-compose -up -d
