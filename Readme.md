@@ -1,9 +1,5 @@
 # payday-tech-test
 
-## Instructions
-
-LIVE DEMO: xxx.xxx.com
-
 ### Local development machine
 
 1. Install Docker and docker-compose if you don't already have it https://store.docker.com/search?type=edition&offering=community
@@ -41,3 +37,14 @@ You need to enter the docker container and run it from in there, so that it has 
 $ docker-compose exec php bash 
 $ /var/www/html/app/vendor/phpunit/phpunit/phpunit -c ../phpunit.xml
 ```
+
+### A quick explanation
+
+The front end is a simple site built with ReactJS which takes the input and sends it to the web service. So it is completely decoupled from the backend. 
+
+The backend is built with Lumen of the Laravel family. 
+
+The controller is here `images/php/app/app/http/Controllers/PaydayController` and the other files that handle the logic I put in `images/php/app/app/Models`
+
+It is probably overkill for this project but I wanted to demonstrate splitting out the classes into 3 parts and also the use of an MVC framework. 
+
