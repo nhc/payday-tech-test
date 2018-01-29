@@ -26,7 +26,7 @@ http://localhost:8080/
 Access the backend here 
 
 ```
-http://localhost:80/payday/1/2018
+http://localhost:8081/payday/1/2018
 ```
 
 ### To run unit tests
@@ -48,3 +48,36 @@ The controller is here `images/php/app/app/http/Controllers/PaydayController` an
 
 It is probably overkill for this project but I wanted to demonstrate splitting out the classes into 3 parts and also the use of an MVC framework. 
 
+### Troubleshooting
+
+The whole thing should be painless and just build itself. However if something doesnt seem right you can try this
+
+```bash
+$ docker-compose ps
+```
+
+And this should return something like this
+
+```bash
+       Name                     Command               State               Ports
+--------------------------------------------------------------------------------------------
+backend_db_1         docker-entrypoint.sh mysqld      Up      0.0.0.0:3306->3306/tcp
+backend_frontend_1   docker-php-entrypoint apac ...   Up      0.0.0.0:8080->80/tcp
+backend_server_1     docker-php-entrypoint apac ...   Up      0.0.0.0:8081->80/tcp, 8081/tcp
+```
+
+If anything is not running you can try this again 
+
+```bash
+$ docker-compose -up -d
+```
+
+or 
+
+```bash
+$ docker-compose restart
+```
+
+### Improvements
+
+I can think of plenty. Why not discuss them with me? 
