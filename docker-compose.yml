@@ -1,20 +1,11 @@
-nginx:
-  build: images/nginx
-  command: nginx -g "daemon off;"
-  links:
-    - php
-  ports:
-    - "80:80"
-php:
-  build: images/php
+server:
+  build: images/server
   volumes:
-    - ./images/php:/var/www/html
-  working_dir: /var/www/html/app/public
-  command: php-fpm
+    - ./images/server/app/:/var/www/html
+  ports:
+    - "8123:80"
   links:
     - db
-  ports:
-    - "9000:9000"
   environment:
     APP_ENV: local
     APP_DEBUG: 'true'
