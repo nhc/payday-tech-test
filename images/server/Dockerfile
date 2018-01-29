@@ -1,7 +1,17 @@
 FROM php:7.0-apache
+
 COPY app/ /var/www/html/
+COPY ./php.ini /usr/local/etc/php/
 
-ENV APACHE_DOCUMENT_ROOT /var/www/html/app/public
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    curl
 
-RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
-RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+# Install extensions using the helper script provided by the base image
+RUN docker-php-ext-install \
+    pdo_mysql \
+    pdo_pgsql
+
+WORKDIR /var/www/html
+
+EXPOSE 8081
