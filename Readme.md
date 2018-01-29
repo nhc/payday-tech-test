@@ -35,7 +35,7 @@ You need to enter the docker container and run it from in there, so that it has 
 
 ```bash
 $ docker-compose exec php bash 
-$ /var/www/html/app/vendor/phpunit/phpunit/phpunit -c ../phpunit.xml
+$ vendor/phpunit/phpunit/phpunit -c phpunit.xml
 ```
 
 ### A quick explanation
