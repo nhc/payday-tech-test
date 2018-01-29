@@ -46,7 +46,7 @@ The front end is a simple site built with ReactJS which takes the input and send
 
 The backend is built with Lumen of the Laravel family. 
 
-The controller is here `images/php/app/app/http/Controllers/PaydayController` and the other files that handle the logic I put in `images/php/app/app/Models`
+The controller is here [images/server/app/app/http/Controllers/PaydayController](https://github.com/nhc/payday-tech-test/blob/master/images/server/app/app/Http/Controllers/PaydayController.php) and the other files that handle the logic I put in [images/server/app/app/Models](https://github.com/nhc/payday-tech-test/tree/master/images/server/app/app/Models).
 
 It is probably overkill for this project but I wanted to demonstrate splitting out the classes into 3 parts and also the use of an MVC framework. 
 
