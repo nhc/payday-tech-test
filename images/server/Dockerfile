@@ -1,6 +1,6 @@
 FROM php:7.0-apache
 
-COPY app/ /var/www/html/
+COPY ./app/ /var/www/html/
 COPY ./php.ini /usr/local/etc/php/
 
 RUN apt-get update && apt-get install -y \
