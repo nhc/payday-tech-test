@@ -36,7 +36,7 @@ http://localhost:8081/payday/1/2018
 You need to enter the docker container and run it from in there. This is neccessary so that it can run in the right context. Think of it as a seperate server somewhere.
 
 ```bash
-$ docker-compose exec php bash 
+$ docker-compose exec server bash 
 $ vendor/phpunit/phpunit/phpunit -c phpunit.xml
 ```
 
